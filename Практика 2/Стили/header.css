@@ -1,0 +1,173 @@
+header {
+    width: 90%;
+    background-color: #1692ff;
+    margin: auto;
+    padding: 15px;
+    min-height: 5vw;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px 2px gray;
+}
+
+header * {
+    display: inline-block;
+}
+
+main h1, main h2, main h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+main p, main dl, main dt, main li {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+main blockquote, main q {
+    font-family: 'Source Sans Pro', italic;
+}
+
+main a{
+    font-family: 'Roboto', sans-serif;
+}
+
+header img {
+    float: right;
+}
+header > ul {
+    margin-top: 30px;
+}
+#nav_list >li{
+    list-style-type: none;
+    display: inline;
+    margin: 15px;
+}
+
+#nav_list >li a {
+    color: black;
+    text-decoration: none;
+    font-size: 16pt;
+}
+
+#nav_list >li a:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+#nav_list >li a:active {
+    color: #0f0f49;
+    text-decoration: underline;
+}
+
+#nav_list >li a:visited {
+    font-color: gray;
+    text-decoration: underline;
+}
+
+main {
+    width: 90%;
+    background-color: white;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px 2px gray;
+}
+
+body {
+    background-image: url("/Фото/Фон1.png");
+}
+
+#main_name
+{
+    text-align: center;
+}
+
+h3 + div {
+    background-color: black;
+    width: 100px;
+    height: 3px;
+    border-radius: 7px;
+    margin: -10px auto;
+}
+
+h3 {
+    text-align: center;
+}
+
+section {
+    width: 80%;
+    margin: auto;
+}
+
+map {
+    display: block;
+    margin: auto;
+}
+
+main p, main dl, main dt, main li {
+    font-size: 14pt;
+}
+
+blockquote {
+    width: 80%;
+    padding: 40px;
+    margin: 20px auto;
+    border-style: double;
+    border-radius: 20px;
+    border-color: gray;
+}
+
+footer
+{
+    width: 90%;
+    padding: 15px 15px 0px 15px;
+    margin: auto;
+    box-shadow: 0px 10px 20px 2px gray;
+    border-radius: 20px;
+    background-color: #1692ff;
+}
+
+address a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+address {
+   text-align: center;
+}
+
+footer li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+footer ul {
+    text-align: center;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+}
+
+aside {
+    display: block;
+    background-color: white;
+    margin-bottom: 20px;
+}
+aside ul {
+    list-style: none;
+    width: 400px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    border-top-style: solid;
+    border-bottom-style: solid;
+}
+
+aside li {
+    display: inline-block;
+    margin: 0px 15px;
+}
