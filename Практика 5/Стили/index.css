@@ -1,0 +1,34 @@
+/* Настройка секций с контентом */
+section {
+    width: 80%;
+    margin: auto;
+}
+
+map {
+    display: block;
+    margin: auto;
+}
+
+
+aside {
+    display: block;
+    position: relative;
+    top: 0px;
+    bottom: 50px;
+    background-color: white;
+}
+
+aside ul {
+    list-style: none;
+    width: 400px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    border-top-style: solid;
+    border-bottom-style: solid;
+}
+
+aside li {
+    display: inline-block;
+    margin: 0px 15px;
+}
