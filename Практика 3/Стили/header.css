@@ -1,0 +1,103 @@
+h3 + div {
+    background-color: black;
+    width: 100px;
+    height: 3px;
+    border-radius: 7px;
+    margin: -10px auto;
+}
+
+h3 {
+    text-align: center;
+}
+
+section {
+    width: 80%;
+    margin: auto;
+}
+
+map {
+    display: block;
+    margin: auto;
+}
+
+main p, main dl, main dt, main li {
+    font-size: 14pt;
+}
+
+aside {
+    display: block;
+    position: relative;
+    top: 0px;
+    bottom: 50px;
+    background-color: white;
+}
+aside ul {
+    list-style: none;
+    width: 400px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    border-top-style: solid;
+    border-bottom-style: solid;
+}
+
+aside li {
+    display: inline-block;
+    margin: 0px 15px;
+}
+
+#photo {
+    float: left;
+    margin: 20px;
+    box-shadow: 0px 10px 15px 2px gray;
+}
+
+
+main h1, main h2, main h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+main p, main dl, main dt, main li {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+main blockquote, main q {
+    font-family: 'Source Sans Pro', italic;
+}
+
+main a{
+    font-family: 'Roboto', sans-serif;
+}
+
+#moveUp {
+    position: sticky;
+    bottom: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    width: 9px;
+    background-color: #ffffff;
+}
+
+
+body::-webkit-scrollbar-thumb {
+    width: 12px;
+    background-color: #8a8a8a;
+    border-radius: 25px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    width: 12px;
+    background-color: #797979;
+    border-radius: 25px;
+}
+
+body::-webkit-scrollbar-thumb:active {
+    width: 12px;
+    background-color: #626262;
+    border-radius: 25px;
+}z
