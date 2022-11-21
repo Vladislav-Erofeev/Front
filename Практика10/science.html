@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Учёные</title>
+    <link rel="icon" href="pictures/logo.png">
+    <link rel="stylesheet" href="style/light.css" id="theme_link">
+    <link rel="stylesheet" href="style/general.css">
+    <link rel="stylesheet" href="style/science.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+<div id="main_content">
+    <header id="header_pc">
+        <div class="dark_theme">
+            <input type="checkbox" id="theme_check">
+            <label class="theme_btn" for="theme_check" id="theme_btn1">
+                <div>
+                    <img src="pictures/sun.png" width="32" height="32" class="sun">
+                    <img src="pictures/moon.png" width="32" height="32" class="moon">
+                    <div class="round">
+                        <div class="round_in"></div>
+                    </div>
+
+                </div>
+            </label>
+        </div>
+
+        <ul>
+            <a href="index.html"><li>Главная</li></a>
+            <a href="science.html"><li>Учёные</li></a>
+            <a href="about.html"><li>Контакты</li></a>
+        </ul>
+
+        <img src="pictures/logo.png" width="64" height="72">
+    </header>
+
+    <header id="header_phone">
+        <input type="checkbox" id="menu_check">
+        <label for="menu_check" id="menu_btn">
+            <span></span>
+        </label>
+
+        <ul>
+            <a href="index.html"><li>Главная</li></a>
+            <a href="science.html"><li>Учёные</li></a>
+            <a href="about.html"><li>Контакты</li></a>
+        </ul>
+    </header>
+
+    <div id="main">
+
+        <nav>
+            <ul>
+                <li class="button" data-filter="physic">Физика</li>
+                <li class="button" data-filter="chemistry">Химия</li>
+                <li class="button" data-filter="math">Математика</li>
+                <li class="button" data-filter="all">Показать всех</li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="dark_theme">
+                <input type="checkbox" id="theme_check1">
+                <label class="theme_btn" for="theme_check1" id="theme_btn2">
+                    <div>
+                        <img src="pictures/sun.png" width="32" height="32" class="sun">
+                        <img src="pictures/moon.png" width="32" height="32" class="moon">
+                        <div class="round">
+                            <div class="round_in"></div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <h1>Учёные</h1>
+
+            <section id="cards">
+
+                <div class="card physic chemistry">
+                    <div class="front_side"><img src="pictures/science/lomonosov.jpg" width="300" height="400"></div>
+                    <div class="back_side">
+                        <h1>Михаил Васильевич Ломоносов</h1>
+                        <h2>19.11.1711 - 15.04.1765</h2>
+                        <p>Род деятельности: физика, химия</p>
+                        <a href="science/lomonosov.html">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="card physic chemistry">
+                    <div class="front_side"><img src="pictures/science/curie.png" width="300" height="400"></div>
+                    <div class="back_side">
+                        <h1>Мария Склодовская-Кюри</h1>
+                        <h2>19.11.2003 - 23.11.2002</h2>
+                        <p>Род деятельности: физика, химия</p>
+                        <a href="science/curie.html">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="card math physic">
+                    <div class="front_side"><img src="pictures/science/kovalevskaya/kovalevskaya.jpg" width="300" height="400"></div>
+                    <div class="back_side">
+                        <h1>Софья Васильевна Ковалевская</h1>
+                        <h2>15.01.1850 - 10.02.1891</h2>
+                        <p>Род деятельности: математика, физика</p>
+                        <a href="science/kovalevskaya.html">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="card physic philosophy">
+                    <div class="front_side"><img src="pictures/science/einstein/Einstein.jpg" width="300" height="400"></div>
+                    <div class="back_side">
+                        <h1>Альберт Эйнштейн</h1>
+                        <h2>14.03.1879 - 18.04.1955</h2>
+                        <p>Род деятельности: физика, философия</p>
+                        <a href="science/einstein.html">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="card astronomy physic math">
+                    <div class="front_side"><img src="pictures/science/newton/newton.jpg" width="300" height="400"></div>
+                    <div class="back_side">
+                        <h1>Исаак Ньютон</h1>
+                        <h2>04.01.1643 - 31.03.1727</h2>
+                        <p>Род деятельности: физика, математика, астрономия</p>
+                        <a href="science/newtone.html">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="card physic chemistry">
+                    <div class="front_side"><img src="pictures/science/faradei/faradei.jpg" width="300" height="400"></div>
+                    <div class="back_side">
+                        <h1>Майкл Фарадей</h1>
+                        <h2>22.09.1791 - 25.08.1867</h2>
+                        <p>Род деятельности: физика, химия</p>
+                        <a href="science/faradei.html">Подробнее</a>
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
+                <p id="captch"></p>
+                <input type="text" id="userEnter">
+                <button id="captchBtn">Отправить</button>
+
+                <p id="captch1"></p>
+                <input type="text1" id="userEnter1">
+                <button id="captchBtn1">Отправить</button>
+                <br>
+                <br>
+                <button class="accumulator">Корзина</button>
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer>
+        <ul id="links">
+            <a href="https://vk.com/feed" target="_blank"><li><img src="pictures/logo/vk.png" width="30" height="30"></li></a>
+            <a href="https://discord.com/" target="_blank"><li><img src="pictures/logo/dis.png" width="35" height="30"></li></a>
+            <a href="https://www.instagram.com" target="_blank"><li><img src="pictures/logo/inst.png" width="30" height="30"></li></a>
+            <a href="https://web.telegram.org/k/" target="_blank"><li><img src="pictures/logo/telegram.png" width="30" height="30"></li></a>
+            <a href="https://github.com/Vladislav-Erofeev" target="_blank"><li><img src="pictures/logo/gh.png" width="30" height="30"></li></a>
+        </ul>
+
+        <input type="checkbox" id="open_check">
+        <label for="open_check" id="open_btn1">
+            <p>Нашли ошибку?</p>
+        </label>
+
+        <label for="open_check" id="close_btn">
+            <span></span>
+        </label>
+
+        <div id = "form">
+            <h1>Отзыв об ошибке</h1>
+            <input id = "name" type="text" placeholder="Имя">
+            <input id = "mail" type="email" placeholder="Почта">
+            <textarea></textarea>
+            <input id="btn" type="submit">
+
+        </div>
+        <div id="cube1" style="--i:0;" class="cube"></div>
+        <div id="cube2" class="cube" style="--i:2;"></div>
+        <div id="cube3" class="cube" style="--i:3;"></div>
+        <div id="cube4" class="cube" style="--i:4;"></div>
+        <div id="cube5" class="cube" style="--i:5;"></div>
+        <div id = "back_blur">
+        </div>
+
+        <div class="back_blur">
+
+        </div>
+    </footer>
+</div>
+
+</body>
+
+<script>
+        // капча 1
+        let cap = document.querySelector("#captch");
+        let field = document.querySelector("#userEnter");
+        let btn = document.querySelector("#captchBtn");
+        btn.setAttribute('disabled', true);
+        let text = "";
+        let words = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+        generate();
+        function generate() {
+        for(let i = 0; i < 5; i++) {
+        let pos = Math.random() * 52;
+        text += words.substring(pos, pos+1);
+    }
+        cap.innerHTML = text;
+    }
+
+        function isEmpty(obj) {
+        return Object.getOwnPropertyNames(obj).length === 1;
+    }
+
+        field.addEventListener('keyup', function () { // включение или отключение кнопки
+        if (field.value.length >= text.length) {
+        btn.removeAttribute('disabled');
+    } else {
+        btn.setAttribute('disabled', true);
+    }
+    });
+
+        btn.onclick = function () {
+        if(field.value == text) {
+        alert("Капча пройдена");
+        field.remove();
+        btn.remove();
+        cap.remove();
+        text.remove();
+    } else {
+        alert("Капча введена неверно");
+        field.value = "";
+        text = "";
+        generate();
+    }
+    }
+
+        //капча 2
+        let cap1 = document.querySelector("#captch1");
+        let field1 = document.querySelector("#userEnter1");
+        let btn1 = document.querySelector("#captchBtn1");
+        let text1 = "";
+        let ans = 0;
+        generate1();
+
+        function generate1() {
+        for(let i = 0; i < 5; i++) {
+        let n1 = parseInt(Math.random() * 10);
+        let n2 = parseInt(Math.random() * 10);
+        ans = n1 + n2;
+        text1 = n1 + " + " + n2;
+    }
+        cap1.innerHTML = text1;
+    }
+
+        btn1.onclick = function () {
+        if (isEmpty(field1.value)) {
+        alert("Строка пустая");
+    } else if (parseInt(field1.value) == ans) {
+        alert("Вы успешно прошли капчу");
+        field1.remove();
+        btn1.remove();
+        cap1.remove();
+    } else {
+        alert("Значение неверно");
+        field1.value = "";
+        generate1();
+    }
+    }
+
+        // задание 2
+        var accum_btn = document.querySelector('.accumulator')
+
+
+        function accumulator(startingValue) {
+        this.value = startingValue;
+
+        this.read = function () {
+        let num = prompt(`Текущее число: ${this.value}. Введите новое:`)
+        if (isNaN(num)) {
+        alert("Это не число")
+        this.read()
+    }
+        else {
+        this.value = this.value + Number(num)
+    }
+    };
+    }
+
+
+        var accum = new accumulator(10);
+
+
+        accum_btn.addEventListener('click', () => {
+        accum.read();
+    })
+
+        // задание 3
+        let cards = document.querySelectorAll('.card');
+        for(let card of cards) {
+        let text = card.querySelector('p').innerText;
+        if (text.length > 35) {
+        text = text.substring(0, 32) + "...";
+    }
+            card.querySelector('p').innerText = text;
+    }
+</script>
+
+</html>

@@ -5,7 +5,6 @@ function drawHearts(event) {
     heart.style.position = "absolute";
     heart.style.top = (event.pageY - 10) + "px";
     heart.style.left = (event.pageX + 10) + "px";
-    heart.style.backgroundImage = 'src("pictures/heart.png")';
     document.body.append(heart);
     setTimeout(function () {
         document.body.removeChild(heart);

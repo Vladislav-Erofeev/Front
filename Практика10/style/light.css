@@ -1,0 +1,91 @@
+body {
+    background: rgb(0,128,212);
+    background: -moz-linear-gradient(180deg, rgba(0,128,212,1) 0%, rgba(189,0,213,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0,128,212,1) 0%, rgba(189,0,213,1) 100%);
+    background: linear-gradient(180deg, rgba(0,128,212,1) 0%, rgba(189,0,213,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0080d4",endColorstr="#bd00d5",GradientType=1);
+}
+
+#header_pc li::before {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+#header_pc a,
+#header_phone a {
+    color: black;
+}
+
+#main_science h2::after {
+    background-color: black;
+}
+
+#main nav ul li::before {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+#header_phone #menu_btn {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+#header_phone ul li::before {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+#main_section div blockquote {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+.card_content::after {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+.card_content::before {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+#cards a {
+    color: black;
+}
+
+.card_content {
+    color: black;
+    box-shadow: 0 4px 32px 0 rgba(140, 140, 140, 0.43);
+}
+
+.country {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    color: black;
+}
+
+#links li {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+#form h1 {
+    color: black;
+}
+
+#header_pc {
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+footer {
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+main {
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#main nav {
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}

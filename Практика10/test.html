@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="captch"></p>
+<input type="text" id="userEnter">
+<button id="captchBtn">Отправить</button>
+
+<p id="captch1"></p>
+<input type="text1" id="userEnter1">
+<button id="captchBtn1">Отправить</button>
+</body>
+
+<br>
+<br>
+
+<button class="accumulator">Корзина</button>
+
+<p class="card">fdsgdhjgkhlj;k'll;ljkjcfgvhb</p>
+
+<p class="card">fagthsydjukglh,;j./.kljkhgjmnhtg</p>
+
+<p class="card">xdfsgdvhbfjngklhjythgrfed</p>
+
+<script>
+  // капча 1
+  let cap = document.querySelector("#captch");
+  let field = document.querySelector("#userEnter");
+  let btn = document.querySelector("#captchBtn");
+  btn.setAttribute('disabled', true);
+  let text = "";
+  let words = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+  generate();
+  function generate() {
+    for(let i = 0; i < 5; i++) {
+      let pos = Math.random() * 52;
+      text += words.substring(pos, pos+1);
+    }
+    cap.innerHTML = text;
+  }
+
+  function isEmpty(obj) {
+    return Object.getOwnPropertyNames(obj).length === 1;
+  }
+
+  field.addEventListener('keyup', function () { // включение или отключение кнопки
+    if (field.value.length >= text.length) {
+      btn.removeAttribute('disabled');
+    } else {
+      btn.setAttribute('disabled', true);
+    }
+  });
+
+  btn.onclick = function () {
+    if(field.value == text) {
+      alert("Капча пройдена");
+      field.remove();
+      btn.remove();
+      cap.remove();
+      text.remove();
+    } else {
+      alert("Капча введена неверно");
+      field.value = "";
+      text = "";
+      generate();
+    }
+  }
+
+  //капча 2
+  let cap1 = document.querySelector("#captch1");
+  let field1 = document.querySelector("#userEnter1");
+  let btn1 = document.querySelector("#captchBtn1");
+  let text1 = "";
+  let ans = 0;
+  generate1();
+
+  function generate1() {
+    for(let i = 0; i < 5; i++) {
+      let n1 = parseInt(Math.random() * 10);
+      let n2 = parseInt(Math.random() * 10);
+      ans = n1 + n2;
+      text1 = n1 + " + " + n2;
+    }
+    cap1.innerHTML = text1;
+  }
+
+  btn1.onclick = function () {
+    if (isEmpty(field1.value)) {
+      alert("Строка пустая");
+    } else if (parseInt(field1.value) == ans) {
+      alert("Вы успешно прошли капчу");
+      field1.remove();
+      btn1.remove();
+      cap1.remove();
+    } else {
+      alert("Значение неверно");
+      field1.value = "";
+      generate1();
+    }
+  }
+
+  // задание 2
+  var accum_btn = document.querySelector('.accumulator')
+
+
+  function accumulator(startingValue) {
+    this.value = startingValue;
+
+    this.read = function () {
+      let num = prompt(`Текущее число: ${this.value}. Введите новое:`)
+      if (isNaN(num)) {
+        alert("Это не число")
+        this.read()
+      }
+      else {
+        this.value = this.value + Number(num)
+      }
+    };
+  }
+
+
+  var accum = new accumulator(10);
+
+
+  accum_btn.addEventListener('click', () => {
+    accum.read();
+  })
+
+  // задание 3
+  let cards = document.querySelectorAll('.card');
+  for(let card of cards) {
+      let text = card.innerText;
+      if (text.length > 10) {
+          text = text.substring(0, 7) + "...";
+      }
+      card.innerText = text;
+  }
+</script>
+
+</html>

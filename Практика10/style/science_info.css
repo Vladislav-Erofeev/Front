@@ -1,0 +1,240 @@
+main {
+    width: 95%;
+    border-radius: 20px;
+}
+
+p, main ol {
+    font-size: 14pt;
+    padding: 0;
+    margin: 0;
+}
+
+main p {
+    text-indent: 30px;
+}
+
+h1 {
+    font-size: 30pt;
+    text-align: center;
+    padding: 0;
+    margin-top: 5%;
+}
+
+h2 {
+    font-size: 25pt;
+    padding: 0;
+    margin-top: 5%;
+    text-align: center;
+}
+
+h3 {
+    font-size: 22pt;
+    padding: 0;
+    margin-top: 1%;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 5px;
+    border-radius: 20px;
+    margin: auto;
+    padding: 0;
+}
+
+#main_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+}
+
+#main_section section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#photo {
+    float: left;
+    border-radius: 10px;
+    margin-right: 10px;
+    -webkit-box-shadow: 5px 4px 16px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 5px 4px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 4px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1000px) {
+    main {
+        width: 100%;
+    }
+
+    #main_section {
+        width: 85%;
+    }
+
+    p, main ol {
+        font-size: 20pt;
+    }
+
+    h1 {
+        font-size: 50pt;
+    }
+
+    h2 {
+        font-size: 47pt;
+    }
+
+    h3 {
+        font-size: 44pt;
+    }
+
+    #photo {
+        width: 300px;
+        height: 400px;
+        margin-right: 30px;
+    }
+}
+
+.img {
+    position: relative;
+}
+
+.img img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.img figcaption {
+    position: absolute;
+    bottom: 0;
+    padding: 72px 20px 24px;
+    color: white;
+    font-size: 16pt;
+    font-family: 'Source Sans Pro', italic;
+    width: 94%;
+    background: linear-gradient(180deg,rgba(42,42,44,0) 0%,rgba(42,42,44,0.8) 100%);
+}
+
+@media screen and (max-width: 1000px) {
+    .img figcaption {
+        font-size: 20pt;
+    }
+}
+
+#gallery {
+    width: 500px;
+    height: 400px;
+    background: rgba(218, 218, 218, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(58, 58, 58, 0.41);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#gallery #right,
+#gallery #left{
+    width: 50px;
+    height: 50px;
+    background: rgba(236, 236, 236, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(58, 58, 58, 0.41);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 10px;
+    position: absolute;
+    top:calc(50% - 25px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#gallery #left {
+    left: -20px;
+}
+
+#gallery #right {
+    right: -20px;
+}
+
+#gallery .image {
+    width: 500px;
+    height: 350px;
+}
+
+#img1 {
+    background-color: crimson;
+}
+#img2 {
+    background-color: cyan;
+}
+#img3 {
+    background-color: chocolate;
+}
+
+#img4 {
+    background-color: cornflowerblue;
+}
+
+#scroller_area #scroller {
+    display: flex;
+    position: absolute;
+    left: 0px;
+    transition: 0.5s ease-in-out;
+}
+
+#scroller_area {
+    width: 500px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+#right span,
+#right span::after {
+    width: 25px;
+    height: 4px;
+    background-color: black;
+    position: relative;
+    border-radius: 10px;
+}
+
+#right span {
+    transform: rotate(30deg);
+    top:-4px;
+    left: 3px;
+}
+
+#right span::after {
+    content: "";
+    display: block;
+    top: 11px;
+    left: 5px;
+    transform: rotate(-60deg);
+}
+
+#left span,
+#left span::after {
+    width: 25px;
+    height: 4px;
+    background-color: black;
+    position: relative;
+    border-radius: 10px;
+}
+
+#left span {
+    transform: rotate(-30deg);
+    top:-4px;
+    left: -3px;
+}
+
+#left span::after {
+    content: "";
+    display: block;
+    top: 11px;
+    left: -5px;
+    transform: rotate(60deg);
+}

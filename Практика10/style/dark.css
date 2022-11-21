@@ -1,0 +1,96 @@
+body {
+    background: rgb(3,74,112);
+    background: -moz-linear-gradient(180deg, rgb(3, 66, 100) 0%, rgb(66, 11, 66) 78%);
+    background: -webkit-linear-gradient(180deg, rgb(3, 66, 100) 0%,rgb(66, 11, 66) 78%);
+    background: linear-gradient(180deg, rgb(3, 66, 100) 0%, rgb(66, 11, 66) 78%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#034a70",endColorstr="#4b0a4b",GradientType=1);
+}
+
+#header_pc li::before {
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+}
+
+#header_pc a,
+#header_phone a {
+    color: white;
+}
+
+#main_science h2::after {
+    background-color: white;
+}
+
+#main nav ul li::before {
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+}
+
+#header_phone #menu_btn {
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+}
+
+#header_phone ul li::before {
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+}
+
+#main_section div blockquote {
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+}
+
+.card_content::after {
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+}
+
+.card_content::before {
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+}
+
+.card_content {
+    box-shadow: 0 8px 32px 0 rgba(80, 80, 80, 0.6);
+}
+
+.country {
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+    color: white;
+}
+
+#links li {
+    box-shadow: 0 8px 32px 0 rgba(80, 80, 80, 0.6);
+}
+
+#links li img {
+    filter: invert(100%);
+}
+
+#cards a {
+    color: white;
+}
+
+#form h1 {
+    color: white;
+}
+
+#header_pc {
+    background: rgba(136, 136, 136, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(58, 58, 58, 0.41);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: white;
+}
+
+footer {
+    background: rgba(136, 136, 136, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(58, 58, 58, 0.41);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+main {
+    background: rgba(136, 136, 136, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(58, 58, 58, 0.41);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: white;
+}
+
+#main nav {
+    background: rgba(136, 136, 136, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(58, 58, 58, 0.41);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: white;
+}
