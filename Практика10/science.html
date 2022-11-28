@@ -281,22 +281,22 @@
 
 
         function accumulator(startingValue) {
-        this.value = startingValue;
+            this.value = startingValue;
 
-        this.read = function () {
-        let num = prompt(`Текущее число: ${this.value}. Введите новое:`)
-        if (isNaN(num)) {
-        alert("Это не число")
-        this.read()
-    }
-        else {
-        this.value = this.value + Number(num)
-    }
-    };
-    }
+            this.read = function () {
+                let num = prompt(`Текущее число: ${this.value}. Введите новое:`)
+                if (isNaN(num)) {
+                    alert("Это не число");
+                    this.read();
+                }
+                else {
+                this.value = this.value + Number(num);
+                }
+            };
+        }
 
 
-        var accum = new accumulator(10);
+        var accum = new accumulator(0);
 
 
         accum_btn.addEventListener('click', () => {
@@ -304,11 +304,12 @@
     })
 
         // задание 3
+        let countOfSymbols = 30;
         let cards = document.querySelectorAll('.card');
         for(let card of cards) {
         let text = card.querySelector('p').innerText;
-        if (text.length > 35) {
-        text = text.substring(0, 32) + "...";
+        if (text.length > countOfSymbols) {
+        text = text.substring(0, countOfSymbols-3) + "...";
     }
             card.querySelector('p').innerText = text;
     }

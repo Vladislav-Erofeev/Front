@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+  #secA {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .box1 {
+    width: 100px;
+    height: 100px;
+    background-color: #55a3fb;
+  }
+
+  .box2 {
+    width: 100px;
+    height: 100px;
+    background-color: #2bfc0a;
+  }
+
+  .box3 {
+    width: 100px;
+    height: 100px;
+    background-color: #fb55c1;
+  }
+
+  .box4 {
+    width: 100px;
+    height: 100px;
+    background-color: #befb55;
+  }
+
+  .box5 {
+    width: 100px;
+    height: 100px;
+    background-color: #ff8800;
+  }
+
+  #secB {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .adverb {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+  }
+
+  #ads {
+    width: 250px;
+    height: 500px;
+    overflow: auto;
+  }
+</style>
+<body>
+
+<section id="secA">
+  <div class="box1 box">
+    <p class="card">10</p>
+  </div>
+  <div class="box2 box">
+    <p class="card">20</p>
+  </div>
+  <div class="box3 box">
+    <p class="card">30</p>
+  </div>
+  <div class="box4 box">
+    <p class="card">40</p>
+  </div>
+  <div class="box5 box">
+    <p class="card">50</p>
+  </div>
+</section>
+<br>
+
+<section id="secB">
+
+</section>
+
+<p id="display_all">Вывести элементы</p>
+<p id="replace">Заменить все 20 на 40</p>
+<p id="delete">Удалить первый элемент</p>
+<p id="deleteAll">Удалить элементы больше 10 и меньше 50</p>
+<p id="sort1">Сортировка по возрастанию</p>
+<p id="sort2">Сортировка по убыванию</p>
+
+
+<section id="ads">
+
+</section>
+
+<p id="adsBtn">Изменить время отправки уведомлений</p>
+
+</body>
+<script>
+
+  // Задание 1
+  let btn1 = document.getElementsByClassName("box");
+  let arr = [];
+
+  function addBox() {
+    let elem = document.createElement("div");
+    elem.className = this.className;
+    elem.innerHTML = this.querySelector('p').outerHTML;
+    arr.push(elem);
+    addElem()
+  }
+
+  function addElem() {
+    document.querySelector("#secB").replaceChildren();
+    for(let i = 0; i < arr.length; i++) {
+      document.querySelector("#secB").append(arr[i]);
+    }
+  }
+
+  for (let i = 0; i < btn1.length; i++) {
+    btn1[i].addEventListener('click', addBox);
+  }
+
+  document.querySelector("#display_all").addEventListener('click', addElem);
+  document.querySelector("#delete").addEventListener('click', () => {
+
+    arr.shift();
+    addElem()
+  })
+
+  document.querySelector("#replace").addEventListener('click', () => {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i].classList.contains("box2")) {
+          arr[i].classList.remove("box2");
+          arr[i].classList.add("box4");
+          arr[i].querySelector('p').innerHTML = 40;
+        }
+      }
+    addElem()
+  })
+
+  // задание 2
+  let btnDel = document.getElementById("deleteAll");
+  btnDel.addEventListener('click', ()=> {
+    arr = filter(arr, 10, 50)
+    addElem()
+  })
+
+  function filter(arr, a, b) {
+    let temp = [];
+    for(let i = 0; i < arr.length; i++) {
+      if (arr[i].querySelector('p').innerHTML > a && arr[i].querySelector('p').innerHTML < b) {
+        temp.push(arr[i]);
+      }
+    }
+    return temp
+  }
+
+  // задание 3
+  let btnSort = document.getElementById("sort1");
+
+  btnSort.addEventListener('click', sortMax);
+
+  function sortMax() {
+    for (let i = 0; i < arr.length; i++) {
+      document.querySelector("#secB").removeChild(arr[i]);
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0 ; j < arr.length-1-i; j++) {
+        if (arr[j].querySelector('p').innerHTML > arr[j+1].querySelector('p').innerHTML) {
+          let temp = arr[j];
+          arr[j] = arr[j+1]
+          arr[j+1] = temp;
+        }
+      }
+    }
+    addElem()
+  }
+
+  let btnSort1 = document.getElementById("sort2");
+
+  btnSort1.addEventListener('click', sortMin);
+
+  function sortMin() {
+    for (let i = 0; i < arr.length; i++) {
+      document.querySelector("#secB").removeChild(arr[i]);
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0 ; j < arr.length-1-i; j++) {
+        if (arr[j].querySelector('p').innerHTML < arr[j+1].querySelector('p').innerHTML) {
+          let temp = arr[j];
+          arr[j] = arr[j+1]
+          arr[j+1] = temp;
+        }
+      }
+    }
+    addElem()
+  }
+
+  // задание 4
+  let counter = 0;
+  let btnAds = document.querySelector('#adsBtn');
+  let time = 3000;
+  let timer =  setInterval(addAdverb, 3000)
+
+  btnAds.addEventListener('click', () => {
+    if (time == 3000) {
+      clearInterval(timer)
+      time = 100
+      timer = setInterval(addAdverb, time);
+    } else {
+      clearInterval(timer)
+      time = 3000
+      timer = setInterval(addAdverb, time);
+    }
+  })
+
+  function addAdverb() {
+    counter++;
+    let elem = document.createElement('p');
+    elem.innerHTML = `Уведомление с номером ${counter}`
+    elem.classList.add('adverb');
+    document.querySelector('#ads').append(elem);
+  }
+
+</script>
+</html>
