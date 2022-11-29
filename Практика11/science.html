@@ -133,20 +133,6 @@
     // задание 4
     let counter = 0;
     let adsBtn = document.querySelector('#adsBtn');
-    let time = 3000;
-    let timer =  setInterval(addAdverb, time)
-
-    adsBtn.addEventListener('click', () => {
-        if (time == 3000) {
-            clearInterval(timer)
-            time = 100
-            timer = setInterval(addAdverb, time);
-        } else {
-            clearInterval(timer)
-            time = 3000
-            timer = setInterval(addAdverb, time);
-        }
-    })
 
     function addAdverb() {
         counter++;
@@ -157,6 +143,29 @@
         notification.innerHTML = `Уведомление ${counter}`
         document.querySelector('#not #content').append(notification);
     }
+
+    function addDecorator(addAd){
+        let time = 0
+        let intervalID
+
+        return function(){
+            if (time == 3000) {
+                clearInterval(intervalID)
+                time = 10000
+                intervalID = setInterval(addAd, time);
+            } else {
+                clearInterval(intervalID)
+                time = 3000
+                intervalID = setInterval(addAd, time);
+            }
+        };
+    }
+
+    changeAdd = addDecorator(addAdverb)
+    changeAdd()
+    adsBtn.addEventListener("click", () =>{
+        changeAdd()
+    })
 </script>
 
 </body>
