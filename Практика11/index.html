@@ -16,6 +16,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+  }
+
+  .box h3, .box p {
+    margin: 0;
   }
   .box1 {
     width: 100px;
@@ -72,18 +77,23 @@
 
 <section id="secA">
   <div class="box1 box">
+    <h3>Карточка 1</h3>
     <p class="card">10</p>
   </div>
   <div class="box2 box">
+    <h3>Карточка 2</h3>
     <p class="card">20</p>
   </div>
   <div class="box3 box">
+    <h3>Карточка 3</h3>
     <p class="card">30</p>
   </div>
   <div class="box4 box">
+    <h3>Карточка 4</h3>
     <p class="card">40</p>
   </div>
   <div class="box5 box">
+    <h3>Карточка 5</h3>
     <p class="card">50</p>
   </div>
 </section>
@@ -93,19 +103,11 @@
 
 </section>
 
-<p id="display_all">Вывести элементы</p>
 <p id="replace">Заменить все 20 на 40</p>
 <p id="delete">Удалить первый элемент</p>
 <p id="deleteAll">Удалить элементы больше 10 и меньше 50</p>
 <p id="sort1">Сортировка по возрастанию</p>
 <p id="sort2">Сортировка по убыванию</p>
-
-
-<section id="ads">
-
-</section>
-
-<p id="adsBtn">Изменить время отправки уведомлений</p>
 
 </body>
 <script>
@@ -117,7 +119,14 @@
   function addBox() {
     let elem = document.createElement("div");
     elem.className = this.className;
-    elem.innerHTML = this.querySelector('p').outerHTML;
+
+    let name = document.createElement('h3');
+    name.innerHTML = this.querySelector('h3').innerHTML;
+    elem.append(name);
+
+    let text = document.createElement('p');
+    text.innerHTML = this.querySelector('p').innerHTML;
+    elem.append(text)
     arr.push(elem);
     addElem()
   }
@@ -133,7 +142,6 @@
     btn1[i].addEventListener('click', addBox);
   }
 
-  document.querySelector("#display_all").addEventListener('click', addElem);
   document.querySelector("#delete").addEventListener('click', () => {
 
     arr.shift();
@@ -209,32 +217,6 @@
       }
     }
     addElem()
-  }
-
-  // задание 4
-  let counter = 0;
-  let btnAds = document.querySelector('#adsBtn');
-  let time = 3000;
-  let timer =  setInterval(addAdverb, 3000)
-
-  btnAds.addEventListener('click', () => {
-    if (time == 3000) {
-      clearInterval(timer)
-      time = 100
-      timer = setInterval(addAdverb, time);
-    } else {
-      clearInterval(timer)
-      time = 3000
-      timer = setInterval(addAdverb, time);
-    }
-  })
-
-  function addAdverb() {
-    counter++;
-    let elem = document.createElement('p');
-    elem.innerHTML = `Уведомление с номером ${counter}`
-    elem.classList.add('adverb');
-    document.querySelector('#ads').append(elem);
   }
 
 </script>
