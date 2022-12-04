@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+  #secA {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .box h3, .box p {
+    margin: 0;
+  }
+  .box1 {
+    width: 100px;
+    height: 100px;
+    background-color: #55a3fb;
+  }
+
+  .box2 {
+    width: 100px;
+    height: 100px;
+    background-color: #2bfc0a;
+  }
+
+  .box3 {
+    width: 100px;
+    height: 100px;
+    background-color: #fb55c1;
+  }
+
+  .box4 {
+    width: 100px;
+    height: 100px;
+    background-color: #befb55;
+  }
+
+  .box5 {
+    width: 100px;
+    height: 100px;
+    background-color: #ff8800;
+  }
+
+  #secB {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .adverb {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+  }
+
+  #ads {
+    width: 250px;
+    height: 500px;
+    overflow: auto;
+  }
+</style>
+<body>
+
+<section id="secA">
+  <div class="box1 box">
+    <h3>Карточка 1</h3>
+    <p class="card">10</p>
+  </div>
+  <div class="box2 box">
+    <h3>Карточка 2</h3>
+    <p class="card">20</p>
+  </div>
+  <div class="box3 box">
+    <h3>Карточка 3</h3>
+    <p class="card">30</p>
+  </div>
+  <div class="box4 box">
+    <h3>Карточка 4</h3>
+    <p class="card">40</p>
+  </div>
+  <div class="box5 box">
+    <h3>Карточка 5</h3>
+    <p class="card">50</p>
+  </div>
+</section>
+<br>
+
+<section id="secB">
+
+</section>
+
+<p id="replace">Заменить все 20 на 40</p>
+<p id="delete">Удалить первый элемент</p>
+<p id="deleteAll">Удалить элементы больше 10 и меньше 50</p>
+<p id="sort1">Сортировка по возрастанию</p>
+<p id="sort2">Сортировка по убыванию</p>
+
+</body>
+<script>
+
+  // Задание 1
+  let btn1 = document.getElementsByClassName("box");
+  let arr = [];
+
+  function addBox() {
+    let elem = document.createElement("div");
+    elem.className = this.className;
+
+    let name = document.createElement('h3');
+    name.innerHTML = this.querySelector('h3').innerHTML;
+    elem.append(name);
+
+    let text = document.createElement('p');
+    text.innerHTML = this.querySelector('p').innerHTML;
+    elem.append(text)
+    arr.push(elem);
+    addElem()
+  }
+
+  function addElem() {
+    document.querySelector("#secB").replaceChildren();
+    for(let i = 0; i < arr.length; i++) {
+      document.querySelector("#secB").append(arr[i]);
+    }
+  }
+
+  for (let i = 0; i < btn1.length; i++) {
+    btn1[i].addEventListener('click', addBox);
+  }
+
+  document.querySelector("#delete").addEventListener('click', () => {
+
+    arr.shift();
+    addElem()
+  })
+
+  document.querySelector("#replace").addEventListener('click', () => {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i].classList.contains("box2")) {
+          arr[i].classList.remove("box2");
+          arr[i].classList.add("box4");
+          arr[i].querySelector('p').innerHTML = 40;
+        }
+      }
+    addElem()
+  })
+
+  // задание 2
+  let btnDel = document.getElementById("deleteAll");
+  btnDel.addEventListener('click', ()=> {
+    arr = filter(arr, 10, 50)
+    addElem()
+  })
+
+  function filter(arr, a, b) {
+    let temp = [];
+    for(let i = 0; i < arr.length; i++) {
+      if (arr[i].querySelector('p').innerHTML > a && arr[i].querySelector('p').innerHTML < b) {
+        temp.push(arr[i]);
+      }
+    }
+    return temp
+  }
+
+  // задание 3
+  let btnSort = document.getElementById("sort1");
+
+  btnSort.addEventListener('click', sortMax);
+
+  function sortMax() {
+    for (let i = 0; i < arr.length; i++) {
+      document.querySelector("#secB").removeChild(arr[i]);
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0 ; j < arr.length-1-i; j++) {
+        if (arr[j].querySelector('p').innerHTML > arr[j+1].querySelector('p').innerHTML) {
+          let temp = arr[j];
+          arr[j] = arr[j+1]
+          arr[j+1] = temp;
+        }
+      }
+    }
+    addElem()
+  }
+
+  let btnSort1 = document.getElementById("sort2");
+
+  btnSort1.addEventListener('click', sortMin);
+
+  function sortMin() {
+    for (let i = 0; i < arr.length; i++) {
+      document.querySelector("#secB").removeChild(arr[i]);
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0 ; j < arr.length-1-i; j++) {
+        if (arr[j].querySelector('p').innerHTML < arr[j+1].querySelector('p').innerHTML) {
+          let temp = arr[j];
+          arr[j] = arr[j+1]
+          arr[j+1] = temp;
+        }
+      }
+    }
+    addElem()
+  }
+
+</script>
+</html>

@@ -100,7 +100,18 @@
         </div>
             <section>
                 <button id="adsBtn">Изменить время отправки</button>
+                <a href="https://github.com/">github</a>
             </section>
+
+            <section>
+                <ul id="user_list">
+
+                </ul>
+            </section>
+        </section>
+
+        <section id="picture">
+            <div></div>
         </section>
     </main>
 
@@ -130,6 +141,12 @@
 </div>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log( window.getComputedStyle(document.querySelector("#not #counter")).backgroundColor )
+
+    }, false);
+
+
     // задание 4
     let counter = 0;
     let adsBtn = document.querySelector('#adsBtn');
@@ -145,6 +162,15 @@
         let notification = document.createElement('p');
         notification.innerHTML = `Уведомление ${counter}`
         document.querySelector('#not #content').append(notification);
+        setTimeout(function () {
+            document.querySelector('#not #content').removeChild(notification);
+            let count = document.querySelector('#not #counter');
+            counter--;
+            if (counter > 99) {
+                count.innerHTML = `99+`;
+            } else
+                count.innerHTML = `${counter}`;
+        }, 10000)
     }
 
     function addDecorator(notific){
@@ -154,7 +180,7 @@
         return function(){
             if (time == 3000) {
                 clearInterval(intervalID)
-                time = 10000
+                time = 100
                 intervalID = setInterval(notific, time);
             } else {
                 clearInterval(intervalID)
@@ -164,11 +190,49 @@
         };
     }
 
+
     changeNotific = addDecorator(notification)
     changeNotific()
     adsBtn.addEventListener("click", () =>{
         changeNotific()
     })
+
+
+    function listFunc() {
+        let list = document.querySelector('#user_list');
+        while (1) {
+            let text = prompt();
+            if (text == "" || text == null) {
+                break;
+            }
+            let elem = document.createElement('li');
+            elem.innerHTML = text;
+            list.append(elem);
+        }
+    }
+
+    setTimeout(listFunc, 1500);
+
+    let a = document.querySelectorAll('a');
+    for(let elem of a) {
+        let href = elem.getAttribute('href')
+        if(href.includes("https")) {
+            elem.style.color = 'red';
+        }
+    }
+
+    let pic_block = document.querySelector('#picture');
+    let width_block = parseInt(window.getComputedStyle(pic_block).width) ;
+    let height_block = parseInt(window.getComputedStyle(pic_block).height) ;
+    pic_block.style.top = `calc(50% - ${height_block/2}px)`;
+    pic_block.style.left = `calc(50% - ${width_block/2}px)`;
+
+    let inside_elem = pic_block.querySelector('div');
+    let block_width = parseInt(window.getComputedStyle(inside_elem).width)
+    let block_height = parseInt(window.getComputedStyle(inside_elem).height)
+    inside_elem.style.top = `calc(50% - ${block_height/2}px)`;
+    inside_elem.style.left = `calc(50% - ${block_width/2}px)`;
+
 </script>
 
 </body>

@@ -702,3 +702,22 @@ header a:hover {
     align-items: center;
     justify-content: center;
 }
+
+#picture {
+    background-color: gray;
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#picture div {
+    background-color: #3e80cb;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 0;
+}

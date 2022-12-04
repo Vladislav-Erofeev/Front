@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <section id="sec">
+        <div id = "div1">
+            <p class="txt">text1<p class="close">close</p></p>
+        </div>
+        <div id = "div2">
+            <p class="txt">text2<p class="close">close</p></p>
+        </div>
+        <div id = "div3">
+            <p class="txt">text3<p class="close">close</p></p>
+        </div>
+        <div id = "div4">
+            <p class="txt">text4<p class="close">close</p></p>
+        </div>
+
+    </section>
+
+</body>
+
+<script>
+    let notifSection = document.querySelector("#sec");
+
+    notifSection.addEventListener('click', deleteNot)
+
+     function deleteNot(event){
+        let close = event.target.closest('.close')
+         if(!close) return;
+        close.parentElement.remove();
+    }
+</script>
+</html>
