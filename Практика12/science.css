@@ -644,6 +644,7 @@ header a:hover {
 
 #content p {
     border-style: solid;
+    position: relative;
     height: 50px;
     margin: 0;
     width: 90%;
@@ -720,4 +721,14 @@ header a:hover {
     height: 100px;
     top: 0;
     left: 0;
+}
+
+.close_btn_not {
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background-color: red;
 }

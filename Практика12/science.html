@@ -161,6 +161,11 @@
             count.innerHTML = `${counter}`;
         let notification = document.createElement('p');
         notification.innerHTML = `Уведомление ${counter}`
+
+        let close_btn = document.createElement('div');
+        close_btn.classList.add('close_btn_not');
+        notification.append(close_btn)
+
         document.querySelector('#not #content').append(notification);
         setTimeout(function () {
             document.querySelector('#not #content').removeChild(notification);
@@ -232,6 +237,24 @@
     let block_height = parseInt(window.getComputedStyle(inside_elem).height)
     inside_elem.style.top = `calc(50% - ${block_height/2}px)`;
     inside_elem.style.left = `calc(50% - ${block_width/2}px)`;
+
+
+    let notifSection = document.querySelector("#not #content");
+
+    notifSection.addEventListener('click', deleteNot)
+
+    function deleteNot(event){
+        let close = event.target.closest('.close_btn_not')
+        if(!close) return;
+
+        let count = document.querySelector('#not #counter');
+        counter--;
+        if (counter > 99) {
+            count.innerHTML = `99+`;
+        } else
+            count.innerHTML = `${counter}`;
+        close.parentElement.remove();
+    }
 
 </script>
 
