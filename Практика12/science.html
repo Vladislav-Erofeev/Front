@@ -100,7 +100,7 @@
         </div>
             <section>
                 <button id="adsBtn">Изменить время отправки</button>
-                <a href="https://github.com/">github</a>
+
             </section>
 
             <section>
@@ -108,10 +108,14 @@
 
                 </ul>
             </section>
+
+            <section>
+                <button id="show_pic">Показать картинку</button>
+            </section>
         </section>
 
         <section id="picture">
-            <div></div>
+            <img src="bell.png">
         </section>
     </main>
 
@@ -131,9 +135,11 @@
         <ul>
             <li><img src="Фото/Социальные сети/fb.png"></li>
             <li><img src="Фото/Социальные сети/inst.png"></li>
-            <li><img src="Фото/Социальные сети/tg.png"></li>
             <li><img src="Фото/Социальные сети/twitter.png"></li>
-            <li><img src="Фото/Социальные сети/vk.png"></li>
+            <li><a href="https://github.com/">github</a></li>
+            <li><a href="https://vk.com/feed">VK</a></li>
+            <li><a href="https://web.telegram.org/k/">telegram</a></li>
+            <li></li>
         </ul>
         <p>Сделано Ерофеевым Владиславом, 2022г © РТУ МИРЭА</p>
     </footer>
@@ -141,13 +147,8 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log( window.getComputedStyle(document.querySelector("#not #counter")).backgroundColor )
 
-    }, false);
-
-
-    // задание 4
+    // Уведомления
     let counter = 0;
     let adsBtn = document.querySelector('#adsBtn');
 
@@ -202,43 +203,6 @@
         changeNotific()
     })
 
-
-    function listFunc() {
-        let list = document.querySelector('#user_list');
-        while (1) {
-            let text = prompt();
-            if (text == "" || text == null) {
-                break;
-            }
-            let elem = document.createElement('li');
-            elem.innerHTML = text;
-            list.append(elem);
-        }
-    }
-
-    setTimeout(listFunc, 1500);
-
-    let a = document.querySelectorAll('a');
-    for(let elem of a) {
-        let href = elem.getAttribute('href')
-        if(href.includes("https")) {
-            elem.style.color = 'red';
-        }
-    }
-
-    let pic_block = document.querySelector('#picture');
-    let width_block = parseInt(window.getComputedStyle(pic_block).width) ;
-    let height_block = parseInt(window.getComputedStyle(pic_block).height) ;
-    pic_block.style.top = `calc(50% - ${height_block/2}px)`;
-    pic_block.style.left = `calc(50% - ${width_block/2}px)`;
-
-    let inside_elem = pic_block.querySelector('div');
-    let block_width = parseInt(window.getComputedStyle(inside_elem).width)
-    let block_height = parseInt(window.getComputedStyle(inside_elem).height)
-    inside_elem.style.top = `calc(50% - ${block_height/2}px)`;
-    inside_elem.style.left = `calc(50% - ${block_width/2}px)`;
-
-
     let notifSection = document.querySelector("#not #content");
 
     notifSection.addEventListener('click', deleteNot)
@@ -255,6 +219,55 @@
             count.innerHTML = `${counter}`;
         close.parentElement.remove();
     }
+
+    // Добавление пользовательского списка
+    function listFunc() {
+        let list = document.querySelector('#user_list');
+        while (1) {
+            let text = prompt();
+            if (text == "" || text == null) {
+                break;
+            }
+            let elem = document.createElement('li');
+            elem.innerHTML = text;
+            list.append(elem);
+        }
+    }
+
+    setTimeout(listFunc, 1500);
+
+    // Изменение цвета внешних ссылок
+    let a = document.querySelectorAll('a');
+    for(let elem of a) {
+        let href = elem.getAttribute('href')
+        if(href.includes("https")) {
+            elem.style.color = 'red';
+        }
+    }
+
+    // Центрирование изображения
+    let pic_block = document.querySelector('#picture');
+    let width_block = parseInt(window.getComputedStyle(pic_block).width) ;
+    let height_block = parseInt(window.getComputedStyle(pic_block).height) ;
+    pic_block.style.top = `calc(50% - ${height_block/2}px)`;
+    pic_block.style.left = `calc(50% - ${width_block/2}px)`;
+
+    let inside_elem = pic_block.querySelector('img');
+    let block_width = inside_elem.naturalWidth;
+    let block_height = inside_elem.naturalHeight;
+    inside_elem.style.top = `calc(50% - ${block_height/2}px)`;
+    inside_elem.style.left = `calc(50% - ${block_width/2}px)`;
+
+    let btn = document.getElementById('show_pic');
+    btn.addEventListener('click', ()=> {
+        if(window.getComputedStyle(pic_block).display == 'none') {
+            pic_block.style.display = 'block';
+        } else {
+            pic_block.style.display = 'none';
+        }
+    })
+
+
 
 </script>
 

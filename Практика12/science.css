@@ -707,20 +707,16 @@ header a:hover {
 #picture {
     background-color: gray;
     position: fixed;
-    width: 200px;
-    height: 200px;
+    width: 700px;
+    height: 700px;
     top: 0;
     left: 0;
     z-index: 10;
+    display: none;
 }
 
-#picture div {
-    background-color: #3e80cb;
+#picture img {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 0;
-    left: 0;
 }
 
 .close_btn_not {
